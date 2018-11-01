@@ -6,9 +6,12 @@ apply plugin: 'java'
 sourceCompatibility = 1.8
 
 repositories {
+    repositories { maven { url 'http://192.168.1.200:8081/repository/maven-public/' } }
+    repositories { maven { url 'https://repo.spring.io/libs-snapshot/' } }
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.quartz-scheduler', name: 'quartz', version: '2.3.0'
+    compile group: 'com.usi.share', name: 'share-common', version: '1.0.6'
 }
